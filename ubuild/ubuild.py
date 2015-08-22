@@ -14,5 +14,5 @@ def log(view_function):
 			url= urls.objects.get_or_create(httpRefer=httpRefer)
 			url[0].count+=1
 			url[0].save()
-		return view_function(request)     
+		return view_function(request,*args,**kwargs)     
 	return _wrapped_view_func

@@ -1,15 +1,14 @@
 <html>
 
 <head>
+
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 <!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<title>uRl</title>
+<title>url logger</title>
 </head>
 <body>
 
@@ -31,15 +30,13 @@
            <ul class="nav navbar-nav navbar-right">
         
           {% if user.is_authenticated %}
-            <li class="dropdown">
-          <a  href="{% url 'home' %}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-user"></i><b> {{ user.first_name.capitalize }} </b><span class="caret"></span></a>
-        </li>
             
-	         <li><a href="{% url 'logout' %}"><i class="fa fa-sign-out"></i> <b>Logout</b></a></li>
+            <li><a href="#"><i class="fa fa fa-user"></i> <b>{{ user.capitalize }}</b></a></li>
+           <li><a href="#"><i class="fa fa-sign-out"></i> <b>Logout</b></a></li>
     
             {% else %}
-          <li><!--a href="{% url 'login' %}">Login</a-->
-              <a href="{% url 'logout' %}"><i class="fa fa-google-plus fa-2x"> Sign In</i></a>
+          <li>
+              <a href="#"><i class="fa fa-google-plus fa-2x"> Sign In</i></a>
           </li>     
            {% endif %}
                  
@@ -52,6 +49,8 @@
    <div class="row">
    
    
+<br>
+<br>
     {% block content %}
     
 
@@ -67,6 +66,5 @@
  <p>
           Built with lots of <span style="color: #C0392B;">♥</span> and little bit of Python
         </p>
-</footer>
-</div>
+</footer-->
 </html>
