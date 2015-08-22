@@ -1,0 +1,45 @@
+{% extends "/home/gururaj/django-autourl/ubuild/templates/ubuild/base.html" %}
+{% block content %}
+<div class="container">
+<div class="col-md-">
+<br/>
+<form class="form-horizontal">
+<fieldset>
+ <div class="form-group">
+  <label class="col-md-4 control-label" for="">Time </label>
+  <div class="col-md-6">
+    <div class="input-group">
+      <p>{{logDetails.time}}</p>
+    </div>
+  
+  </div>
+</div>
+<!-- Prepended text-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="">URL </label>
+  <div class="col-md-6">
+    <div class="input-group">
+      <span class="input-group-addon">{{logDetails.requestMethod}}</span>
+      <input id="" name="" class="form-control" placeholder="" type="text" value="{{logDetails.httpRefer}}" disabled>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textarea">META</label>
+  <div class="col-md-4">                     
+    <code class="prettyprint">{{logDetails.headder}}</code>
+   
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+
+</div>
+</div>
+{% endblock %}

@@ -7,23 +7,86 @@
   <table class="table  table-hover ">
   <thead>
     <tr class="success">
-      
+      <th>Id</th>
       <th>URL</th>
-      <th>Count</th>
+      <th>Total Count</th>
     </tr>
   </thead>
   <tbody>
   {% for l in log %}
     <tr>
-      
+      <td>{{l.pk}}</td>
       <td><a href="/ubuild/details/<{{l.httpRefer}}>">{{l.httpRefer}}</td>
-      <td>{{l.count}}</td>
+      <td><b>{{l.count}}</b></td>
     </tr> 
    {% endfor %}
   </tbody>
 </table>
 
 </div> 
+<div class="col-md-4">
+  
+  <style>
+      body{
+        padding: 0;
+        margin: 0;
+      }
+      #canvas-holder{
+        width:100%;
+      }
+    </style>
+ <div id="canvas-holder">
+ <h1>Top URLs</h1>
+      <canvas id="chart-area" width="500" height="500"/>
+    </div>
 
 </div>
+
+</div>
+<script>
+
+    var doughnutData = [
+        {
+          value: {{count1}},
+          color:"#F7464A",
+          highlight: "#FF5A5E",
+          label: "{{top_url1}}"
+        },
+        {
+          value: {{count2}},
+          color: "#46BFBD",
+          highlight: "#5AD3D1",
+          label: "{{top_url2}}"
+        },
+        {
+          value: {{count3}},
+          color: "#FDB45C",
+          highlight: "#FFC870",
+          label: "{{top_url3}}"
+        },
+        {
+          value: {{count4}},
+          color: "#949FB1",
+          highlight: "#A8B3C5",
+          label: "{{top_url4}}"
+        },
+        {
+          value: {{count5}},
+          color: "#4D5360",
+          highlight: "#616774",
+          label: "{{top_url5}}"
+        }
+
+      ];
+
+      window.onload = function(){
+        var ctx = document.getElementById("chart-area").getContext("2d");
+        window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {responsive : true});
+      };
+
+
+
+  </script>
+
+
 {% endblock %}
