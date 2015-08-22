@@ -3,21 +3,23 @@
 <div class="container">
 <div class="col-md-8">
   
-  <h1>All URLs</h1>
+  <h1>Details</h1>
   <table class="table  table-hover ">
   <thead>
     <tr class="success">
       
-      <th>URL</th>
-      <th>Count</th>
+      <th>Id</th>
+      <th>Remote Address</th>
+      <th>Time</th>
     </tr>
   </thead>
   <tbody>
-  {% for l in log %}
+  {% for l in logs %}
     <tr>
       
-      <td><a href="/ubuild/details/<{{l.httpRefer}}>">{{l.httpRefer}}</td>
-      <td>{{l.count}}</td>
+      <td><a href="details/{{l.pk}}">{{l.id}}</td>
+      <td>{{l.remoteAddr}}</td>
+      <td>{{l.time}}</td>
     </tr> 
    {% endfor %}
   </tbody>
