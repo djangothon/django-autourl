@@ -6,9 +6,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
 <!-- Optional theme -->
-<link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
+<link rel="stylesheet" href="http://bootswatch.com/darkly/bootstrap.min.css">
 
-<title>url logger</title>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.js"></script>
+
+<title>URL Tracker</title>
 </head>
 <body>
 
@@ -17,7 +21,7 @@
         <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
       <div class="container">
         <div class="navbar-header-solid">
-           <a class="navbar-brand" href="{% url 'home' %}"> <i class="fa fa-play-circle-o fa-1x">BrandName</i></a>
+           <a class="navbar-brand" href="{% url 'home' %}"> <i class="fa fa-search fa-1x"> URL Tracker</i></a>
                       
         </div>
     
@@ -31,7 +35,7 @@
         
           {% if user.is_authenticated %}
             
-            <li><a href="#"><i class="fa fa fa-user"></i> <b>{{ user.capitalize }}</b></a></li>
+            <li><a href="#"><i class="fa fa fa-user"></i> <b>Batman</b></a></li>
            <li><a href="#"><i class="fa fa-sign-out"></i> <b>Logout</b></a></li>
     
             {% else %}

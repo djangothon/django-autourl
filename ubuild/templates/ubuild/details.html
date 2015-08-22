@@ -1,7 +1,7 @@
 {% extends "/home/gururaj/django-autourl/ubuild/templates/ubuild/base.html" %}
 {% block content %}
 <div class="container">
-<div class="col-md-8">
+<div class="col-md-6">
   
   <h1>Details</h1>
   <table class="table  table-hover ">
@@ -27,5 +27,52 @@
 
 </div> 
 
-</div>
+<div class="col-md-6">
+  
+  <style>
+      body{
+        padding: 0;
+        margin: 0;
+      }
+      #canvas-holder{
+        width:100%;
+      }
+    </style>
+    <h1>History</h1>
+ <div id="canvas-holder">
+    <div style="width:100%">
+      <div>
+        <canvas id="canvas" height="100%" width="100%"></canvas>
+      </div>
+    </div>
+
+
+  <script>
+    var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+    var lineChartData = {
+      labels : ["January","February","March","April","May","June","July"],
+      datasets : [
+        {
+          label: "My First dataset",
+          fillColor : "rgba(220,220,220,0.2)",
+          strokeColor : "rgba(220,220,220,1)",
+          pointColor : "rgba(220,220,220,1)",
+          pointStrokeColor : "#fff",
+          pointHighlightFill : "#fff",
+          pointHighlightStroke : "rgba(220,220,220,1)",
+          data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+        }
+      ]
+
+    }
+
+  window.onload = function(){
+    var ctx = document.getElementById("canvas").getContext("2d");
+    window.myLine = new Chart(ctx).Line(lineChartData, {
+      responsive: true
+    });
+  }
+
+
+  </script>
 {% endblock %}
