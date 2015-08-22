@@ -27,3 +27,9 @@ def details(request,url):
 		})
 
 
+def getMeta(request,pk):
+	logDetails= logs.objects.get(pk=pk)
+	return render(request,"ubuild/metadata.html",{
+		"logDetails":logDetails
+		})
+
